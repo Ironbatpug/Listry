@@ -18,7 +18,7 @@ class ParallaxCell: UITableViewCell {
         // Initialization code
     }
     
-    func configurreCell(withImage image: UIImage, andDescription desc: String){
+    func configureCell(withImage image: UIImage, andDescription desc: String){
         imageOfCell.image = image
         descriptionLBL.text = desc
     }
