@@ -24,6 +24,20 @@ class ParallaxCell: UITableViewCell {
     }
     
     func setupParallax() {
+        let min = Swift.CFloat(-30)
+        let max = Swift.CFloat(30)
         
+        let xMotion = UIInterpolatingMotionEffect(keyPath: "layer.transform.translation.x", type: .tiltAlongHorizontalAxis)
+        xMotion.minimumRelativeValue = min
+        xMotion.maximumRelativeValue = max
+        
+        let yMotion = UIInterpolatingMotionEffect(keyPath: "layer.transform.translation.y", type: .tiltAlongVerticalAxis)
+        yMotion.minimumRelativeValue = min
+        yMotion.maximumRelativeValue = max
+        
+        let motionAffectGroup = UIMotionEffectGroup()
+        motionAffectGroup.motionEffects = [xMotion, yMotion]
+        
+        imageOfCell.addMotionEffect(motionAffectGroup)
     }
 }
